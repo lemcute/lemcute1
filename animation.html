@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Moving Box</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('spaceship.jfif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            background-color: blue;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: brown;
+        }
+
+        nav {
+            float: center;
+            width: 200%;
+            height: 600px;
+            padding: 40px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: right;
+            padding: 20px;
+            width: 30%;
+            height: 300px;
+            background-color: deeppink;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: purple;
+            padding: 20px;
+            text-align: center;
+            color: green;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: magenta;
+            position: absolute;
+            animation: moving 10s linear infinite;
+        }
+
+        @keyframes moving {
+            0% {
+                left: 20%;
+                top: 20%;
+            }
+
+            25% {
+                left: 40%;
+                top: 20%;
+            }
+
+            50% {
+                left: 40%;
+                top: 40%;
+            }
+
+            75% {
+                left: 20%;
+                top: 40%;
+            }
+
+            100% {
+                left: 20%;
+                top: 20%;
+            }
+        }
+
+        p {
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <article class="regular"><label for="tbuser">Enter a number:</label><input type="number" id="tbuser"
+            placeholder="Enter a number" maxlength="12"><input type="button" id="btn1" value="Enter"></article>
+    <nav>
+        <div>
+            <p class="output" id="output1"></p>
+        </div>
+    </nav>
+    <script>
+        const txt1 = document.getElementById('tbuser');
+        const btn1 = document.getElementById('btn1');
+        const out1 = document.getElementById('output1');
+        function fun1() {
+            out1.innerHTML = txt1.value;
+        }
+        btn1.addEventListener('click', fun1);
+    </script>
+</body>
+
+</html>

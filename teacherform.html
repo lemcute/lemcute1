@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Teacher Form</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        h3 {
+            text-align: center;
+        }
+
+        container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        form {
+            border: 1px solid blue;
+            border-radius: 5px;
+            padding: 15px;
+            background: rgba(19, 97, 52, 0.9);
+        }
+
+        input {
+            display: block;
+            border: 1px solid green;
+            border-radius: 4px;
+            padding: 5px;
+            width: min(100% - 0.53rem, 100%);
+        }
+
+        button {
+            position: relative;
+            display: block;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid black;
+            transition: .3s ease;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        h3 {
+            color:  yellowgreen;
+            -webkit-text-stroke-color: maroon;
+    -webkit-text-stroke-width: 1px;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        input {
+            display: block;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="lemcute-logo">
+                <h1>LEMCUTE😊</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="Home.html">Home</a>
+                </li>
+                <li>
+                    <a href="About.html">About</a>
+                </li>
+                <li>
+                    <a href="alumniform.html">Alumni
+                        Form</a>
+                </li>
+                <li id="student">
+                    <a href="#">Student Portal</a>
+                    <ul>
+                        <div id="triangle"></div>
+                        <li>
+                            <a href="studentform.html">STUDENT FORM</a>
+                        </li>
+                        <li>
+                            <a href="login.html">LOG IN</a>
+                        </li>
+                        <li>
+                            <a href="val.html">IP VALIDATION</a>
+                        </li>
+                        <li>
+                            <a href="validationform.html">VALIDATION FORM</a>
+                        </li>
+                        <li>
+                            <a href="EnrollmentForm.html">ENROLLMENT FORM</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="animation.html">Animation</a>
+                </li>
+                <li id="sidebar">
+                    <button onclick="newClass()">&#9776</button>
+                </li>
+            </ul>
+            <ul id="sidebar1">
+                <li>
+                    <a href="studentform.html">STUDENT FORM</a>
+                </li>
+                <li>
+                    <a href="teacherform.html">TEACHER FORM</a>
+                </li>
+                <li>
+                    <a href="alumniform.html">ALUMNI FORM</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <container>
+        <h3>Teacher Form</h3>
+        <form action="storing.php" method="post">
+            <label for="emailAddress">Email Address:</label>
+            <input type="email" name="email" id="emailAddress">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </container>
+        <script>
+            function newClass() {
+                var element = document.getElementById("sidebar1");
+                element.classList.toggle("mystyle");
+            }
+        </script>
+</body>
+
+</html>

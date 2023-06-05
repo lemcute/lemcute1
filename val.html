@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        div.container {
+            position: relative;
+            margin: 50px auto;
+            text-align: center;
+            width: 420px;
+            padding: 10px;
+            border: 5px solid blue;
+            background: rgba(13, 13, 123, 0.757);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="lemcute-logo">
+                <h1>LEMCUTE😊</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="Home.html">Home</a>
+                </li>
+                <li>
+                    <a href="About.html">About</a>
+                </li>
+                <li>
+                    <a href="alumniform.html">Alumni
+                        Form</a>
+                </li>
+                <li id="student">
+                    <a href="#">Student Portal</a>
+                    <ul>
+                        <div id="triangle"></div>
+                        <li>
+                            <a href="studentform.html">STUDENT FORM</a>
+                        </li>
+                        <li>
+                            <a href="login.html">LOG IN</a>
+                        </li>
+                        <li>
+                            <a href="val.html">IP VALIDATION</a>
+                        </li>
+                        <li>
+                            <a href="validationform.html">VALIDATION FORM</a>
+                        </li>
+                        <li>
+                            <a href="EnrollmentForm.html">ENROLLMENT FORM</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="animation.html">Animation</a>
+                </li>
+                <li id="sidebar">
+                    <button onclick="newClass()">&#9776</button>
+                </li>
+            </ul>
+            <ul id="sidebar1">
+                <li>
+                    <a href="studentform.html">STUDENT FORM</a>
+                </li>
+                <li>
+                    <a href="teacherform.html">TEACHER FORM</a>
+                </li>
+                <li>
+                    <a href="alumniform.html">ALUMNI FORM</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Validation for IP Address</h2>
+        <hr>
+        <h3><br>Input a number to determine which classes it belong. <br><br></h3>
+        <label for="input1"></label>
+        <h6 id="inputs">
+            <input type="number" id="num1" oninput="input1()" maxlength="3" min="0" max="223">.
+            <input type="number" id="num2" oninput="input2()" maxlength="3" min="0" max="255">.
+            <input type="number" id="num3" oninput="input3()" maxlength="3" min="0" max="255">.
+            <input type="number" id="num4" oninput="input4()" maxlength="3" min="0" max="254">
+        </h6>
+        <p><br>Result: </p>
+        <p id="demo">Class ?</p>
+    </div>
+    <script>
+        function newClass() {
+            var element = document.getElementById("sidebar1");
+            element.classList.toggle("mystyle");
+        }
+    </script>
+    <script>
+        // document.querySelectorAll("input[type='number']").forEach(input => {
+        //     input.oninput = () => {
+        //         if (input.value.length > input.maxLength) input.value = input.value.slice(0, input.maxLength);
+        //     };
+        // });
+
+        function input1() {
+            var classA = "Class A";
+            var classB = "Class B";
+            var classC = "Class C";
+            var a = document.getElementById('num1').value;
+
+            if (a >= 1 && a <= 223) {
+                if (a >= 1 && a <= 126) {
+                    text = classA + "<br>";
+                }
+                else if (a == 127) {
+                    alert("Ip address starting with 127 are not valid because they are reserved for loopback addresses. Please specify some other valid value between 1 and 223.");
+                }
+                else if (a >= 128 && a <= 191) {
+                    text = classB + "<br>";
+                }
+                else {
+                    text = classC + "<br>";
+                }
+                document.getElementById("demo").innerHTML = text;
+            }
+            else {
+                alert("Invalid inputs, it must be in 1-223");
+            }
+        }
+        function input2() {
+            var b = document.getElementById('num2').value;
+            if (b > 0 && b < 256) { }
+            else {
+                alert("The combination of Ip address and submnet mask is invalid. All of the bits in the host address portion of the IP address are set to 1. Please enter a valid combination of IP address and subnet mask.");
+            }
+        }
+        function input3() {
+            var a = document.getElementById('num3').value;
+            if (a > 0 && a < 256) {
+
+            }
+            else {
+                alert("The combination of Ip address and submnet mask is invalid. All of the bits in the host address portion of the IP address are set to 1. Please enter a valid combination of IP address and subnet mask.");
+            }
+        }
+        function input4() {
+            var a = document.getElementById('num4').value;
+            if (a > 0 && a < 255) {
+
+            }
+            else {
+                alert("The combination of Ip address and submnet mask is invalid. All of the bits in the host address portion of the IP address are set to 1. Please enter a valid combination of IP address and subnet mask.");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

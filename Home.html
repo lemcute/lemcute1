@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="lemcute-logo"><h1>LEMCUTE😊</h1></div>
+            <ul>
+                <li>
+                    <a href="Home.html">Home</a>
+                </li>
+                <li>
+                    <a href="About.html">About</a>
+                </li>
+                <li>
+                    <a href="alumniform.html">Alumni
+                        Form</a>
+                </li>
+                <li id="student">
+                    <a href="#">Student Portal</a>
+                    <ul>
+                        <div id="triangle"></div>
+                        <li>
+                            <a href="studentform.html">STUDENT FORM</a>
+                        </li>
+                        <li>
+                            <a href="login.html">LOG IN</a>
+                        </li>
+                        <li>
+                            <a href="val.html">IP VALIDATION</a>
+                        </li>
+                        <li>
+                            <a href="validationform.html">VALIDATION FORM</a>
+                        </li>
+                        <li>
+                            <a href="EnrollmentForm.html">ENROLLMENT FORM</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="animation.html">Animation</a>
+                </li>
+                <li id="sidebar">
+                    <button onclick="newClass()">&#9776</button>
+                </li>
+            </ul>
+            <ul id="sidebar1">
+                <li>
+                    <a href="studentform.html">STUDENT FORM</a>
+                </li>
+                <li>
+                    <a href="teacherform.html">TEACHER FORM</a>
+                </li>
+                <li>
+                    <a href="alumniform.html">ALUMNI FORM</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    </main>
+    
+    <script>
+        function newClass() {
+            var element = document.getElementById("sidebar1");
+            element.classList.toggle("mystyle");
+        }
+    </script>
+</body>
+</html>

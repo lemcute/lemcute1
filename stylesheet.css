@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('spaceship.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav{
+    height: 70px;
+    min-width: 850px;
+    position: sticky;
+    background-color:rgba(44, 117, 241, 0.553);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+nav h1{
+    position: relative;
+    left: 3rem;
+    font-size: 2.5rem;
+    padding: 0;
+    cursor: pointer;
+    color:skyblue;
+    -webkit-text-stroke-color: maroon;
+    -webkit-text-stroke-width: 1px;
+}
+nav h1:hover{
+    color: orange;
+    -webkit-text-stroke-color: blue;
+    -webkit-text-stroke-width: 1px;
+}
+nav ul{
+    display: flex;
+    float: right;
+    margin-right: 20px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li{
+    list-style-type: none;
+    margin: 5px;
+    transition: .2s ease;
+}
+
+nav ul li a,  nav #sidebar button{
+    position: relative;
+    background: rgb(205, 195, 195);
+    text-decoration: none;
+    color: rgba(137, 43, 226, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    transition: .1s ease-in;
+    cursor: pointer;
+}
+nav ul li a:hover{
+    background: rgba(190, 209, 22, 0.792);
+    color: maroon;
+}
+nav ul #student ul{
+    display: none;
+    padding: 20px 0 0 0;
+    transform: translateX(-25%);
+    height: auto;
+    border-radius: 10px;
+    z-index: -100;
+}
+nav ul #student:hover > ul{
+    display: block;
+    top: 53px;
+    position: absolute;
+    transition: 0.3s ease-in;
+    z-index: 10;
+}
+nav ul li ul li{
+    padding: 5px 10px;
+    margin: 0;
+    background: rgba(43, 28, 124, 0.853);
+}
+nav ul li ul li:nth-last-child(1){
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+nav ul li ul li:nth-child(2){
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-top: 10px;
+}
+nav ul li ul li a{
+    padding: 25px;
+    display: block;
+}
+nav ul #student ul #triangle{
+    position: absolute;
+    width: 0;
+    height: 10px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgba(43, 28, 124, 0.853);
+    top: 0;
+    transform: translateX(85px);
+}
+nav #sidebar1 {
+    position: fixed;
+    height: 100vh;
+    right: -15%;
+    top: 70px;
+    background: rgba(67, 24, 24, 0.833);
+    transition: .3s ease;
+    display: block;
+}
+nav #sidebar1.mystyle{
+    right: -30px;          
+}
+nav #sidebar1 li{
+    padding: 10px;
+}
+nav #sidebar1 li a{
+    display: block;
+}
+section{
+    max-width: 800px;
+    margin:9rem   auto;
+    transform: translateX(-10rem);
+}
+section div{
+    position: relative;
+    background:rgba(44, 117, 241, 0.553);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+    backdrop-filter: blur(10px);
+}

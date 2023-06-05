@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Signin form
+    </title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --main-color: 	;
+            --form-bg: rgba(23, 23, 235, 0.3);
+            --border-color: #a6c8cd;
+            --form-color: #000000;
+            --form-input-bg: rgba(120, 167, 182, 0.22);
+
+            --border-radius: 10px;
+            --form-logo-size: 100px;
+            --form-max-width: 400px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            --webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+            height: 100vh;
+            position: relative;
+            display: grid;
+            place-items: center;
+            background: url(spaceship.jfif);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .form {
+            padding: 50px 60px;
+            background-color: #1aa6ecb7;
+            border-radius: var(--border-radius);
+            color: var(--form-color);
+            text-align: center;
+            width: 100%;
+            max-width: var(--form-max-width);
+            color: white;
+        }
+
+        .form-logo {
+            display: block;
+            margin-bottom: 50px;
+        }
+
+        .form-logo img {
+            width: var(--form-logo-size);
+            border-radius: 50%;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            background-color: var(--form-input-bg);
+            border: 2px solid transparent;
+            height: 46px;
+            width: 100%;
+            position: relative;
+            color: var(--form-color);
+            border-radius: var(--border-radius);
+            padding:  20px;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .form-input::placeholder {
+            color: var(--form-color);
+        }
+
+        .form-input:focus {
+            border: 2px solid var(--border-color);
+        }
+
+        .form-input-icon {
+            position: absolute;
+            right: 10px;
+            top: 14px;
+            transform: scale(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .form-input-icon.err {
+            color: pink;
+        }
+
+        .form-input-icon.success {
+            color:#FFC0CB;
+        }
+
+        .form-group.err .form-input-icon.err,
+        .form-group.success .form-input-icon.success {
+            transform: scale(1);
+        }
+
+        .form-input-err-msg {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            margin-top: 10px;
+            padding-left: 20px;
+            color: #c0392b;
+        }
+
+        .form-group-checkbox {
+            text-align: left;
+        }
+
+        .form-group-checkbox input {
+            opacity: 0;
+            height: 0;
+            width: 0;
+            cursor: pointer;
+        }
+
+        .form-group-checkbox label {
+            cursor: pointer;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .form-group-checkbox label::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            background-color: var(--form-input-bg);
+        }
+
+        .form-group-checkbox label i {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            color: var(--main-color);
+            transition: transform 0.3s ease-in-out;
+            transform: scale(0);
+        }
+
+        .form-group-checkbox input:checked+label i {
+            transform: scale(1);
+        }
+
+        .form-btn {
+            margin: 15px 0;
+            height: 46px;
+            width: 100%;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--main-color);
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+            color: var(--main-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .form-btn:hover {
+            background-color: var(--main-color);
+            color: #fff;
+        }
+
+        .form-social {
+            margin: 15px 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-social-item {
+            display: grid;
+            place-items: center;
+            height: 44px;
+            width: calc(33% - 10px);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+        }
+
+        .form-social-item i {
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .form-social-item.fb {
+            background-color: #3b5999;
+        }
+
+        .form-social-item.tw {
+            background-color: #1da1f2;
+        }
+
+        .form-social-item.gg {
+            background-color: #df4a32;
+        }
+
+        .form-txt {
+            margin-top: 15px;
+            font-size: 14px;
+            display: block;
+        }
+
+        .form-txt a {
+            text-decoration: none;
+            color: var(--main-color);
+        }
+
+        .form-txt a:hover {
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .form {
+                height: 100vh;
+                width: 100%;
+                max-width: unset;
+                padding: 50px 30px;
+                border-radius: 0;
+            }
+        }
+        .paragraph{
+            text-decoration: none;
+            color: white;
+        }
+        a{
+            color: rgb(189, 179, 161);
+        }
+        a:hover{
+            color: rgb(161, 137, 93);
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <div class="form" id="signin-form">
+        <h2>Sign in</h2>
+        <br>
+        <div class="form-group">
+            <input type="email" class="form-input" placeholder="Email" id="signin-email">
+            <span class="form-input-icon err">
+                <i class='bx bx-error-circle'></i>
+            </span>
+            <span class="form-input-icon success">
+                <i class='bx bx-check-circle'></i>
+            </span>
+            <span class="form-input-err-msg" data-err-for="signin-email"></span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-input" placeholder="Password" id="signin-password">
+            <span class="form-input-icon err">
+                <i class='bx bx-error-circle'></i>
+            </span>
+            <span class="form-input-icon success">
+                <i class='bx bx-check-circle'></i>
+            </span>
+            <span class="form-input-err-msg" data-err-for="signin-password"></span>
+        </div>
+        <div class="form-group form-group-checkbox">
+            <input type="checkbox" name="remember" id="remember" checked="checked">
+            <label for="remember">
+                Remember Me
+                <i class='bx bx-check'></i>
+            </label>
+        </div>
+        <button class="form-btn" id="signin-btn">Sign in</button>
+        <span class="form-delimiter">
+            or connect with
+        </span>
+        <a href="google.com">Google</a>
+        or
+        <a href="facebook.com">Facebook</a>
+        <span class="form-txt">
+            Don't have an account?
+            <a href="#">Sign up!</a>
+        </span>
+        <span class="form-txt">
+            <a href="#">Forgot password?</a>
+        </span>
+    </div>
+
+    <script>
+        let signin_form = document.querySelector('#signin-form')
+
+        let signin_btn = document.querySelector('#signin-btn')
+
+        validateEmail = (email) => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+            return re.test(String(email).toLowerCase())
+        }
+
+        checkSigninInput = (input) => {
+            let err_span = signin_form.querySelector(`span[data-err-for="${input.id}"]`)
+            let val = input.value.trim()
+            let form_group = input.parentElement
+
+            switch (input.getAttribute('type')) {
+                case 'password':
+                    if (val.length < 8) {
+                        form_group.classList.add('err')
+                        form_group.classList.remove('success')
+                        err_span.innerHTML = 'Password must be at least 8 characters'
+                    } else {
+                        form_group.classList.add('success')
+                        form_group.classList.remove('err')
+                        err_span.innerHTML = ''
+                    }
+                    break;
+                case 'email':
+                    if (val.length === 0 || !validateEmail(val)) {
+                        form_group.classList.add('err')
+                        form_group.classList.remove('success')
+                        err_span.innerHTML = 'Invalid Email'
+                    } else {
+                        form_group.classList.add('success')
+                        form_group.classList.remove('err')
+                        err_span.innerHTML = ''
+                    }
+            }
+        }
+
+        checkSigninForm = () => {
+            let inputs = signin_form.querySelectorAll('.form-input')
+            inputs.forEach(input => checkSigninInput(input))
+        }
+
+        signin_btn.onclick = () => {
+            checkSigninForm()
+        }
+
+        let inputs = signin_form.querySelectorAll('.form-input')
+        inputs.forEach(input => {
+            input.addEventListener('focusout', () => {
+                checkSigninInput(input)
+            })
+        })
+    </script>
+
+</body>
+
+</html>
